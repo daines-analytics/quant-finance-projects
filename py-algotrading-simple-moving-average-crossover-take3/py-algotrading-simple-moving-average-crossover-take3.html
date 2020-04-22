@@ -13078,12 +13078,12 @@ div#notebook {
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Algorithmic-Trading-Model-for-Simple-Moving-Average-Crossover-Take-3">Algorithmic Trading Model for Simple Moving Average Crossover Take 3<a class="anchor-link" href="#Algorithmic-Trading-Model-for-Simple-Moving-Average-Crossover-Take-3">&#182;</a></h1><h3 id="David-Lowe">David Lowe<a class="anchor-link" href="#David-Lowe">&#182;</a></h3><h3 id="May-14,-2020">May 14, 2020<a class="anchor-link" href="#May-14,-2020">&#182;</a></h3><p>SUMMARY: The purpose of this project is to construct and test an algorithmic trading model and document the end-to-end steps using a template.</p>
-<p>INTRODUCTION: This algorithmic trading model uses the 20-day and 50-day simple moving averages to generate trading signals. When the fast_ma curve crosses above the slow_ma curve, the strategy goes long (buys) on the stock. When the opposite occurs, we will exit the position. We apply the analysis on the GOOG stock for the three years of 2017-01-01 thru 2019-12-31.</p>
+<p>INTRODUCTION: This algorithmic trading model uses the 20-day and 50-day simple moving averages to generate trading signals. When the fast moving-average curve crosses above the slow moving-average curve, the strategy goes long (buys) on the stock. When the opposite occurs, we will exit the position. We apply the analysis on the GOOG stock for the three years of 2017-01-01 thru 2019-12-31.</p>
 <p>In iteration Take1, we constructed and tested a trading strategy using the daily stock data from Yahoo! Finance with an initial investment pool of 1,500 USD.</p>
 <p>In iteration Take2, we constructed and tested a trading strategy using the daily stock data from Alpha Vantage with an initial investment pool of 1,500 USD. We also leveraged the technical indicators available from Alpha Vantage.</p>
 <p>In this Take3 iteration, we will construct and test a trading strategy using the daily stock data from IEX Cloud with an initial investment pool of 1,500 USD. We also will leverage the technical indicators available from IEX Cloud.</p>
 <p>ANALYSIS: In iteration Take1, the trading strategy returned 32.79%. In the meantime, the long-only approach achieved an accumulated return of 37.21%.</p>
-<p>In iteration Take2, the trading strategy returned 32.19%. In the meantime, the long-only approach achieved an accumulated return of 37.21%.</p>
+<p>In iteration Take2, the trading strategy returned 32.79%. In the meantime, the long-only approach achieved an accumulated return of 37.21%.</p>
 <p>In this Take3 iteration, the trading strategy returned 32.79%. In the meantime, the long-only approach achieved an accumulated return of 37.21%.</p>
 <p>CONCLUSION: For this period, the trading strategy did not outperform the more straightforward long-only approach. We should consider more modeling with different methods for this stock. However, we were able to successfully use the data sources from IEX Cloud to perform our modeling.</p>
 <p>Dataset ML Model: Time series analysis with numerical attributes</p>
@@ -13293,41 +13293,6 @@ Ending date for the model: 2020-01-01 00:00:00
 <div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># iexcloud_url = &quot;https://cloud.iexapis.com/stable/stock/%s/chart/5y?token=%s&quot; % (stock_symbol, iexcloud_key)</span>
-<span class="c1"># response = requests.get(iexcloud_url)</span>
-<span class="c1"># iex_dict = json.loads(response.text)</span>
-<span class="c1"># print(len(iex_dict), &#39;data points retrieved from the API call.&#39;)</span>
-<span class="c1"># if verbose: print(iex_dict)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[10]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># rawdata_iexcloud = pd.DataFrame(iex_dict)</span>
-<span class="c1"># rawdata_iexcloud.date = pd.to_datetime(rawdata_iexcloud.date)</span>
-<span class="c1"># rawdata_iexcloud.set_index(&#39;date&#39;, inplace=True)</span>
-<span class="c1"># rawdata_iexcloud = rawdata_iexcloud.sort_index(ascending = True)</span>
-<span class="c1"># stock_iexcloud = rawdata_iexcloud[model_start_date:model_end_date]</span>
-<span class="c1"># stock_iexcloud.info()</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[11]:</div>
-<div class="inner_cell">
-    <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">iexcloud_url</span> <span class="o">=</span> <span class="s2">&quot;https://cloud.iexapis.com/stable/stock/</span><span class="si">%s</span><span class="s2">/indicator/sma?range=5y&amp;input1=</span><span class="si">%d</span><span class="s2">&amp;token=</span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">stock_symbol</span><span class="p">,</span> <span class="n">fast_ma</span><span class="p">,</span> <span class="n">iexcloud_key</span><span class="p">)</span>
 <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">iexcloud_url</span><span class="p">)</span>
 <span class="n">iexcloud_dict</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
@@ -13360,7 +13325,7 @@ Ending date for the model: 2020-01-01 00:00:00
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">rawdata_fast_ma</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">iexcloud_dict</span><span class="p">[</span><span class="s1">&#39;indicator&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">T</span>
@@ -13379,7 +13344,7 @@ Ending date for the model: 2020-01-01 00:00:00
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[12]:</div>
+    <div class="prompt output_prompt">Out[10]:</div>
 
 
 
@@ -13535,7 +13500,7 @@ Ending date for the model: 2020-01-01 00:00:00
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">iexcloud_url</span> <span class="o">=</span> <span class="s2">&quot;https://cloud.iexapis.com/stable/stock/</span><span class="si">%s</span><span class="s2">/indicator/sma?range=5y&amp;input1=</span><span class="si">%d</span><span class="s2">&amp;token=</span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">stock_symbol</span><span class="p">,</span> <span class="n">slow_ma</span><span class="p">,</span> <span class="n">iexcloud_key</span><span class="p">)</span>
@@ -13557,7 +13522,7 @@ Ending date for the model: 2020-01-01 00:00:00
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[13]:</div>
+    <div class="prompt output_prompt">Out[11]:</div>
 
 
 
@@ -13719,7 +13684,7 @@ Ending date for the model: 2020-01-01 00:00:00
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[14]:</div>
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">rawdata_iexcloud</span><span class="o">.</span><span class="n">date</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">rawdata_iexcloud</span><span class="o">.</span><span class="n">date</span><span class="p">)</span>
@@ -13777,7 +13742,7 @@ memory usage: 106.0+ KB
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[15]:</div>
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">stock_iexcloud</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
@@ -13793,7 +13758,7 @@ memory usage: 106.0+ KB
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[15]:</div>
+    <div class="prompt output_prompt">Out[13]:</div>
 
 
 
@@ -13969,7 +13934,7 @@ memory usage: 106.0+ KB
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[16]:</div>
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">stock_iexcloud</span><span class="o">.</span><span class="n">tail</span><span class="p">()</span>
@@ -13985,7 +13950,7 @@ memory usage: 106.0+ KB
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[16]:</div>
+    <div class="prompt output_prompt">Out[14]:</div>
 
 
 
@@ -14161,7 +14126,7 @@ memory usage: 106.0+ KB
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[17]:</div>
+<div class="prompt input_prompt">In&nbsp;[15]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">title_string</span> <span class="o">=</span> <span class="s1">&#39;IEX Cloud Historical Stock Information for &#39;</span> <span class="o">+</span> <span class="n">stock_symbol</span>
@@ -14198,7 +14163,7 @@ memory usage: 106.0+ KB
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[18]:</div>
+<div class="prompt input_prompt">In&nbsp;[16]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">if</span> <span class="n">notifyStatus</span><span class="p">:</span> <span class="n">email_notify</span><span class="p">(</span><span class="s2">&quot;Task 2. Acquire and Pre-Process Data completed! &quot;</span><span class="o">+</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%a</span><span class="s1"> %B </span><span class="si">%d</span><span class="s1">, %Y %I:%M:%S %p&#39;</span><span class="p">))</span>
@@ -14218,7 +14183,7 @@ memory usage: 106.0+ KB
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[19]:</div>
+<div class="prompt input_prompt">In&nbsp;[17]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">if</span> <span class="n">notifyStatus</span><span class="p">:</span> <span class="n">email_notify</span><span class="p">(</span><span class="s2">&quot;Task 3. Develop Strategy and Train Model has begun! &quot;</span><span class="o">+</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%a</span><span class="s1"> %B </span><span class="si">%d</span><span class="s1">, %Y %I:%M:%S %p&#39;</span><span class="p">))</span>
@@ -14238,7 +14203,7 @@ memory usage: 106.0+ KB
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[20]:</div>
+<div class="prompt input_prompt">In&nbsp;[18]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Select the data source and pricing columns to use for modeling</span>
@@ -14287,7 +14252,7 @@ memory usage: 29.5+ KB
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[21]:</div>
+<div class="prompt input_prompt">In&nbsp;[19]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">trading_model</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
@@ -14303,7 +14268,7 @@ memory usage: 29.5+ KB
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[21]:</div>
+    <div class="prompt output_prompt">Out[19]:</div>
 
 
 
@@ -14388,7 +14353,7 @@ memory usage: 29.5+ KB
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[22]:</div>
+<div class="prompt input_prompt">In&nbsp;[20]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">trading_model</span><span class="o">.</span><span class="n">tail</span><span class="p">()</span>
@@ -14404,7 +14369,7 @@ memory usage: 29.5+ KB
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[22]:</div>
+    <div class="prompt output_prompt">Out[20]:</div>
 
 
 
@@ -14496,7 +14461,7 @@ memory usage: 29.5+ KB
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[23]:</div>
+<div class="prompt input_prompt">In&nbsp;[21]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">trading_ma_crossover</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
@@ -14522,7 +14487,7 @@ memory usage: 29.5+ KB
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[24]:</div>
+<div class="prompt input_prompt">In&nbsp;[22]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">trading_model</span><span class="p">[</span><span class="s1">&#39;ma_change&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">trading_model</span><span class="p">[</span><span class="s1">&#39;fast_ma&#39;</span><span class="p">]</span> <span class="o">-</span> <span class="n">trading_model</span><span class="p">[</span><span class="s1">&#39;slow_ma&#39;</span><span class="p">]</span>
@@ -14542,7 +14507,7 @@ memory usage: 29.5+ KB
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[24]:</div>
+    <div class="prompt output_prompt">Out[22]:</div>
 
 
 
@@ -14655,7 +14620,7 @@ memory usage: 29.5+ KB
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[25]:</div>
+<div class="prompt input_prompt">In&nbsp;[23]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">trading_model</span><span class="o">.</span><span class="n">tail</span><span class="p">()</span>
@@ -14671,7 +14636,7 @@ memory usage: 29.5+ KB
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[25]:</div>
+    <div class="prompt output_prompt">Out[23]:</div>
 
 
 
@@ -14784,7 +14749,7 @@ memory usage: 29.5+ KB
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[26]:</div>
+<div class="prompt input_prompt">In&nbsp;[24]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">trading_ma_crossover</span><span class="p">(</span><span class="n">trading_model</span><span class="p">)</span>
@@ -14818,7 +14783,7 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[26]:</div>
+    <div class="prompt output_prompt">Out[24]:</div>
 
 
 
@@ -15129,7 +15094,7 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[27]:</div>
+<div class="prompt input_prompt">In&nbsp;[25]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">graph_data</span> <span class="o">=</span> <span class="n">trading_model</span><span class="p">[:]</span>
@@ -15174,7 +15139,7 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[28]:</div>
+<div class="prompt input_prompt">In&nbsp;[26]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">if</span> <span class="n">notifyStatus</span><span class="p">:</span> <span class="n">email_notify</span><span class="p">(</span><span class="s2">&quot;Task 3. Develop Strategy and Train Model completed! &quot;</span><span class="o">+</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%a</span><span class="s1"> %B </span><span class="si">%d</span><span class="s1">, %Y %I:%M:%S %p&#39;</span><span class="p">))</span>
@@ -15194,7 +15159,7 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[29]:</div>
+<div class="prompt input_prompt">In&nbsp;[27]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">if</span> <span class="n">notifyStatus</span><span class="p">:</span> <span class="n">email_notify</span><span class="p">(</span><span class="s2">&quot;Task 4. Back-test Model has begun! &quot;</span><span class="o">+</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%a</span><span class="s1"> %B </span><span class="si">%d</span><span class="s1">, %Y %I:%M:%S %p&#39;</span><span class="p">))</span>
@@ -15207,7 +15172,7 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[30]:</div>
+<div class="prompt input_prompt">In&nbsp;[28]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Construct a portfolio to track the transactions and returns</span>
@@ -15291,7 +15256,7 @@ BOUGHT QTY: 1 on 2019-07-18 00:00:00 at the price of 1141.74
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[31]:</div>
+<div class="prompt input_prompt">In&nbsp;[29]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">portfolio</span><span class="p">[</span><span class="n">portfolio</span><span class="o">.</span><span class="n">trade_action</span> <span class="o">==</span> <span class="mi">1</span><span class="p">]</span>
@@ -15307,7 +15272,7 @@ BOUGHT QTY: 1 on 2019-07-18 00:00:00 at the price of 1141.74
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[31]:</div>
+    <div class="prompt output_prompt">Out[29]:</div>
 
 
 
@@ -15439,7 +15404,7 @@ BOUGHT QTY: 1 on 2019-07-18 00:00:00 at the price of 1141.74
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[32]:</div>
+<div class="prompt input_prompt">In&nbsp;[30]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">portfolio</span><span class="p">[</span><span class="n">portfolio</span><span class="o">.</span><span class="n">trade_action</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">]</span>
@@ -15455,7 +15420,7 @@ BOUGHT QTY: 1 on 2019-07-18 00:00:00 at the price of 1141.74
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[32]:</div>
+    <div class="prompt output_prompt">Out[30]:</div>
 
 
 
@@ -15575,7 +15540,7 @@ BOUGHT QTY: 1 on 2019-07-18 00:00:00 at the price of 1141.74
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[33]:</div>
+<div class="prompt input_prompt">In&nbsp;[31]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">portfolio</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
@@ -15591,7 +15556,7 @@ BOUGHT QTY: 1 on 2019-07-18 00:00:00 at the price of 1141.74
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[33]:</div>
+    <div class="prompt output_prompt">Out[31]:</div>
 
 
 
@@ -15891,7 +15856,7 @@ BOUGHT QTY: 1 on 2019-07-18 00:00:00 at the price of 1141.74
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[34]:</div>
+<div class="prompt input_prompt">In&nbsp;[32]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">portfolio</span><span class="o">.</span><span class="n">tail</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
@@ -15907,7 +15872,7 @@ BOUGHT QTY: 1 on 2019-07-18 00:00:00 at the price of 1141.74
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[34]:</div>
+    <div class="prompt output_prompt">Out[32]:</div>
 
 
 
@@ -16207,7 +16172,7 @@ BOUGHT QTY: 1 on 2019-07-18 00:00:00 at the price of 1141.74
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[35]:</div>
+<div class="prompt input_prompt">In&nbsp;[33]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">title_string</span> <span class="o">=</span> <span class="s1">&#39;Trading Strategy Portfolio for &#39;</span> <span class="o">+</span> <span class="n">stock_symbol</span>
@@ -16245,7 +16210,7 @@ BOUGHT QTY: 1 on 2019-07-18 00:00:00 at the price of 1141.74
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[36]:</div>
+<div class="prompt input_prompt">In&nbsp;[34]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">if</span> <span class="n">notifyStatus</span><span class="p">:</span> <span class="n">email_notify</span><span class="p">(</span><span class="s2">&quot;Task 4. Back-test Model completed! &quot;</span><span class="o">+</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%a</span><span class="s1"> %B </span><span class="si">%d</span><span class="s1">, %Y %I:%M:%S %p&#39;</span><span class="p">))</span>
@@ -16265,7 +16230,7 @@ BOUGHT QTY: 1 on 2019-07-18 00:00:00 at the price of 1141.74
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[37]:</div>
+<div class="prompt input_prompt">In&nbsp;[35]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">if</span> <span class="n">notifyStatus</span><span class="p">:</span> <span class="n">email_notify</span><span class="p">(</span><span class="s2">&quot;Task 5. Evaluate Performance has begun! &quot;</span><span class="o">+</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%a</span><span class="s1"> %B </span><span class="si">%d</span><span class="s1">, %Y %I:%M:%S %p&#39;</span><span class="p">))</span>
@@ -16278,7 +16243,7 @@ BOUGHT QTY: 1 on 2019-07-18 00:00:00 at the price of 1141.74
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[38]:</div>
+<div class="prompt input_prompt">In&nbsp;[36]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Construct a long only as a benchmark for the trading strategy</span>
@@ -16311,7 +16276,7 @@ BOUGHT QTY: 1 on 2019-07-18 00:00:00 at the price of 1141.74
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[38]:</div>
+    <div class="prompt output_prompt">Out[36]:</div>
 
 
 
@@ -16455,7 +16420,7 @@ BOUGHT QTY: 1 on 2019-07-18 00:00:00 at the price of 1141.74
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[39]:</div>
+<div class="prompt input_prompt">In&nbsp;[37]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">benchmark</span><span class="o">.</span><span class="n">tail</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
@@ -16471,7 +16436,7 @@ BOUGHT QTY: 1 on 2019-07-18 00:00:00 at the price of 1141.74
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[39]:</div>
+    <div class="prompt output_prompt">Out[37]:</div>
 
 
 
@@ -16615,7 +16580,7 @@ BOUGHT QTY: 1 on 2019-07-18 00:00:00 at the price of 1141.74
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[40]:</div>
+<div class="prompt input_prompt">In&nbsp;[38]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">title_string</span> <span class="o">=</span> <span class="s1">&#39;Default Benchmark Portfolio for &#39;</span> <span class="o">+</span> <span class="n">stock_symbol</span>
@@ -16653,7 +16618,7 @@ BOUGHT QTY: 1 on 2019-07-18 00:00:00 at the price of 1141.74
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[41]:</div>
+<div class="prompt input_prompt">In&nbsp;[39]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Build a performance data frame to display the returns from the strategy and benchmark</span>
@@ -16674,7 +16639,7 @@ BOUGHT QTY: 1 on 2019-07-18 00:00:00 at the price of 1141.74
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[41]:</div>
+    <div class="prompt output_prompt">Out[39]:</div>
 
 
 
@@ -16770,7 +16735,7 @@ BOUGHT QTY: 1 on 2019-07-18 00:00:00 at the price of 1141.74
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[42]:</div>
+<div class="prompt input_prompt">In&nbsp;[40]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">title_string</span> <span class="o">=</span> <span class="s1">&#39;Trading Strategy vs. Long-Only Benchmark for &#39;</span> <span class="o">+</span> <span class="n">stock_symbol</span>
@@ -16807,7 +16772,7 @@ BOUGHT QTY: 1 on 2019-07-18 00:00:00 at the price of 1141.74
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[43]:</div>
+<div class="prompt input_prompt">In&nbsp;[41]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The accumulated return/loss from the trading strategy: </span><span class="si">%.2f</span><span class="s1"> percent&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">performance</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="s1">&#39;strategy&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="n">initial_capital</span> <span class="o">*</span> <span class="mi">100</span><span class="p">))</span>
@@ -16840,7 +16805,7 @@ The accumulated return/loss from the long-only benchmark: 37.21 percent
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[44]:</div>
+<div class="prompt input_prompt">In&nbsp;[42]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">if</span> <span class="n">notifyStatus</span><span class="p">:</span> <span class="n">email_notify</span><span class="p">(</span><span class="s2">&quot;Task 5. Evaluate Performance completed! &quot;</span><span class="o">+</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%a</span><span class="s1"> %B </span><span class="si">%d</span><span class="s1">, %Y %I:%M:%S %p&#39;</span><span class="p">))</span>
@@ -16853,7 +16818,7 @@ The accumulated return/loss from the long-only benchmark: 37.21 percent
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[45]:</div>
+<div class="prompt input_prompt">In&nbsp;[43]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;Total time for the script:&#39;</span><span class="p">,(</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span> <span class="o">-</span> <span class="n">startTimeScript</span><span class="p">))</span>
@@ -16873,7 +16838,7 @@ The accumulated return/loss from the long-only benchmark: 37.21 percent
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Total time for the script: 0:00:07.994213
+<pre>Total time for the script: 0:00:06.855489
 </pre>
 </div>
 </div>
