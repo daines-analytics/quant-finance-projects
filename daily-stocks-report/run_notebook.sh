@@ -10,6 +10,9 @@
 /opt/conda/bin/jupyter nbconvert --ExecutePreprocessor.timeout=600 --to html --execute py_algotrading_ema_crossover_grid_search_BA.ipynb
 /opt/conda/bin/jupyter nbconvert --ExecutePreprocessor.timeout=600 --to html --execute py_algotrading_sma_crossover_grid_search_BA.ipynb
 
+/opt/conda/bin/jupyter nbconvert --ExecutePreprocessor.timeout=600 --to html --execute py_algotrading_ema_crossover_grid_search_BABA.ipynb
+/opt/conda/bin/jupyter nbconvert --ExecutePreprocessor.timeout=600 --to html --execute py_algotrading_sma_crossover_grid_search_BABA.ipynb
+
 /opt/conda/bin/jupyter nbconvert --ExecutePreprocessor.timeout=600 --to html --execute py_algotrading_ema_crossover_grid_search_BKNG.ipynb
 /opt/conda/bin/jupyter nbconvert --ExecutePreprocessor.timeout=600 --to html --execute py_algotrading_sma_crossover_grid_search_BKNG.ipynb
 
@@ -31,7 +34,8 @@
 /opt/conda/bin/jupyter nbconvert --ExecutePreprocessor.timeout=600 --to html --execute py_algotrading_ema_crossover_grid_search_TSLA.ipynb
 /opt/conda/bin/jupyter nbconvert --ExecutePreprocessor.timeout=600 --to html --execute py_algotrading_sma_crossover_grid_search_TSLA.ipynb
 
+/opt/conda/bin/jupyter nbconvert --ExecutePreprocessor.timeout=600 --to html --execute py_algotrading_ema_crossover_grid_search_TSM.ipynb
+/opt/conda/bin/jupyter nbconvert --ExecutePreprocessor.timeout=600 --to html --execute py_algotrading_sma_crossover_grid_search_TSM.ipynb
+
 /opt/conda/bin/jupyter nbconvert --ExecutePreprocessor.timeout=600 --to html --execute py_algotrading_ema_crossover_grid_search_ZM.ipynb
 /opt/conda/bin/jupyter nbconvert --ExecutePreprocessor.timeout=600 --to html --execute py_algotrading_sma_crossover_grid_search_ZM.ipynb
-
-/opt/conda/bin/jupyter nbconvert --ExecutePreprocessor.timeout=600 --to html --execute py_algotrading_cramer_covid19_index.ipynb
