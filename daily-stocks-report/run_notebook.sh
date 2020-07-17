@@ -1,14 +1,14 @@
 /opt/conda/bin/jupyter nbconvert --ExecutePreprocessor.timeout=600 --to html --execute py_algotrading_ema_crossover_grid_search_AAPL.ipynb
 /opt/conda/bin/jupyter nbconvert --ExecutePreprocessor.timeout=600 --to html --execute py_algotrading_sma_crossover_grid_search_AAPL.ipynb
 
+/opt/conda/bin/jupyter nbconvert --ExecutePreprocessor.timeout=600 --to html --execute py_algotrading_ema_crossover_grid_search_ABT.ipynb
+/opt/conda/bin/jupyter nbconvert --ExecutePreprocessor.timeout=600 --to html --execute py_algotrading_sma_crossover_grid_search_ABT.ipynb
+
 /opt/conda/bin/jupyter nbconvert --ExecutePreprocessor.timeout=600 --to html --execute py_algotrading_ema_crossover_grid_search_AMD.ipynb
 /opt/conda/bin/jupyter nbconvert --ExecutePreprocessor.timeout=600 --to html --execute py_algotrading_sma_crossover_grid_search_AMD.ipynb
 
 /opt/conda/bin/jupyter nbconvert --ExecutePreprocessor.timeout=600 --to html --execute py_algotrading_ema_crossover_grid_search_AMZN.ipynb
 /opt/conda/bin/jupyter nbconvert --ExecutePreprocessor.timeout=600 --to html --execute py_algotrading_sma_crossover_grid_search_AMZN.ipynb
-
-/opt/conda/bin/jupyter nbconvert --ExecutePreprocessor.timeout=600 --to html --execute py_algotrading_ema_crossover_grid_search_BA.ipynb
-/opt/conda/bin/jupyter nbconvert --ExecutePreprocessor.timeout=600 --to html --execute py_algotrading_sma_crossover_grid_search_BA.ipynb
 
 /opt/conda/bin/jupyter nbconvert --ExecutePreprocessor.timeout=600 --to html --execute py_algotrading_ema_crossover_grid_search_BABA.ipynb
 /opt/conda/bin/jupyter nbconvert --ExecutePreprocessor.timeout=600 --to html --execute py_algotrading_sma_crossover_grid_search_BABA.ipynb
@@ -16,8 +16,23 @@
 /opt/conda/bin/jupyter nbconvert --ExecutePreprocessor.timeout=600 --to html --execute py_algotrading_ema_crossover_grid_search_BKNG.ipynb
 /opt/conda/bin/jupyter nbconvert --ExecutePreprocessor.timeout=600 --to html --execute py_algotrading_sma_crossover_grid_search_BKNG.ipynb
 
+/opt/conda/bin/jupyter nbconvert --ExecutePreprocessor.timeout=600 --to html --execute py_algotrading_ema_crossover_grid_search_BMY.ipynb
+/opt/conda/bin/jupyter nbconvert --ExecutePreprocessor.timeout=600 --to html --execute py_algotrading_sma_crossover_grid_search_BMY.ipynb
+
+/opt/conda/bin/jupyter nbconvert --ExecutePreprocessor.timeout=600 --to html --execute py_algotrading_ema_crossover_grid_search_BYND.ipynb
+/opt/conda/bin/jupyter nbconvert --ExecutePreprocessor.timeout=600 --to html --execute py_algotrading_sma_crossover_grid_search_BYND.ipynb
+
+/opt/conda/bin/jupyter nbconvert --ExecutePreprocessor.timeout=600 --to html --execute py_algotrading_ema_crossover_grid_search_DPZ.ipynb
+/opt/conda/bin/jupyter nbconvert --ExecutePreprocessor.timeout=600 --to html --execute py_algotrading_sma_crossover_grid_search_DPZ.ipynb
+
 /opt/conda/bin/jupyter nbconvert --ExecutePreprocessor.timeout=600 --to html --execute py_algotrading_ema_crossover_grid_search_GOOGL.ipynb
 /opt/conda/bin/jupyter nbconvert --ExecutePreprocessor.timeout=600 --to html --execute py_algotrading_sma_crossover_grid_search_GOOGL.ipynb
+
+/opt/conda/bin/jupyter nbconvert --ExecutePreprocessor.timeout=600 --to html --execute py_algotrading_ema_crossover_grid_search_GSK.ipynb
+/opt/conda/bin/jupyter nbconvert --ExecutePreprocessor.timeout=600 --to html --execute py_algotrading_sma_crossover_grid_search_GSK.ipynb
+
+/opt/conda/bin/jupyter nbconvert --ExecutePreprocessor.timeout=600 --to html --execute py_algotrading_ema_crossover_grid_search_JNJ.ipynb
+/opt/conda/bin/jupyter nbconvert --ExecutePreprocessor.timeout=600 --to html --execute py_algotrading_sma_crossover_grid_search_JNJ.ipynb
 
 /opt/conda/bin/jupyter nbconvert --ExecutePreprocessor.timeout=600 --to html --execute py_algotrading_ema_crossover_grid_search_MSFT.ipynb
 /opt/conda/bin/jupyter nbconvert --ExecutePreprocessor.timeout=600 --to html --execute py_algotrading_sma_crossover_grid_search_MSFT.ipynb
