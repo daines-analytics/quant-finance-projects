@@ -31,6 +31,9 @@
 /opt/conda/bin/jupyter nbconvert --ExecutePreprocessor.timeout=600 --to html --execute py_algotrading_ema_crossover_grid_search_JNJ.ipynb
 /opt/conda/bin/jupyter nbconvert --ExecutePreprocessor.timeout=600 --to html --execute py_algotrading_sma_crossover_grid_search_JNJ.ipynb
 
+/opt/conda/bin/jupyter nbconvert --ExecutePreprocessor.timeout=600 --to html --execute py_algotrading_ema_crossover_grid_search_MRVL.ipynb
+/opt/conda/bin/jupyter nbconvert --ExecutePreprocessor.timeout=600 --to html --execute py_algotrading_sma_crossover_grid_search_MRVL.ipynb
+
 /opt/conda/bin/jupyter nbconvert --ExecutePreprocessor.timeout=600 --to html --execute py_algotrading_ema_crossover_grid_search_MSFT.ipynb
 /opt/conda/bin/jupyter nbconvert --ExecutePreprocessor.timeout=600 --to html --execute py_algotrading_sma_crossover_grid_search_MSFT.ipynb
 
