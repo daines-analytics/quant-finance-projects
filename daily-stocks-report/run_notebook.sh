@@ -4,6 +4,8 @@
 
 /opt/conda/bin/jupyter nbconvert --ExecutePreprocessor.timeout=600 --to html --execute py_algotrading_combo_ma_crossover_grid_AMD.ipynb
 
+/opt/conda/bin/jupyter nbconvert --ExecutePreprocessor.timeout=600 --to html --execute py_algotrading_combo_ma_crossover_grid_AMZN.ipynb
+
 /opt/conda/bin/jupyter nbconvert --ExecutePreprocessor.timeout=600 --to html --execute py_algotrading_combo_ma_crossover_grid_BABA.ipynb
 
 /opt/conda/bin/jupyter nbconvert --ExecutePreprocessor.timeout=600 --to html --execute py_algotrading_combo_ma_crossover_grid_BYND.ipynb
