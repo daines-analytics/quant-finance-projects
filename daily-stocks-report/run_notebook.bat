@@ -2,6 +2,8 @@ jupyter nbconvert --ExecutePreprocessor.timeout=600 --to html --execute py_algot
 
 jupyter nbconvert --ExecutePreprocessor.timeout=600 --to html --execute py_algotrading_combo_ma_crossover_grid_ABT.ipynb
 
+jupyter nbconvert --ExecutePreprocessor.timeout=600 --to html --execute py_algotrading_combo_ma_crossover_grid_ADBE.ipynb
+
 jupyter nbconvert --ExecutePreprocessor.timeout=600 --to html --execute py_algotrading_combo_ma_crossover_grid_AMD.ipynb
 
 jupyter nbconvert --ExecutePreprocessor.timeout=600 --to html --execute py_algotrading_combo_ma_crossover_grid_AMZN.ipynb
@@ -27,8 +29,6 @@ jupyter nbconvert --ExecutePreprocessor.timeout=600 --to html --execute py_algot
 jupyter nbconvert --ExecutePreprocessor.timeout=600 --to html --execute py_algotrading_combo_ma_crossover_grid_NVDA.ipynb
 
 jupyter nbconvert --ExecutePreprocessor.timeout=600 --to html --execute py_algotrading_combo_ma_crossover_grid_REGN.ipynb
-
-jupyter nbconvert --ExecutePreprocessor.timeout=600 --to html --execute py_algotrading_combo_ma_crossover_grid_SGEN.ipynb
 
 jupyter nbconvert --ExecutePreprocessor.timeout=600 --to html --execute py_algotrading_combo_ma_crossover_grid_SWKS.ipynb
 
