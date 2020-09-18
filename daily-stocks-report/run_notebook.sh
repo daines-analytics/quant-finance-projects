@@ -14,6 +14,8 @@
 
 /opt/conda/bin/jupyter nbconvert --ExecutePreprocessor.timeout=600 --to html --execute py_algotrading_combo_ma_crossover_grid_CCI.ipynb
 
+/opt/conda/bin/jupyter nbconvert --ExecutePreprocessor.timeout=600 --to html --execute py_algotrading_combo_ma_crossover_grid_CMG.ipynb
+
 /opt/conda/bin/jupyter nbconvert --ExecutePreprocessor.timeout=600 --to html --execute py_algotrading_combo_ma_crossover_grid_DPZ.ipynb
 
 /opt/conda/bin/jupyter nbconvert --ExecutePreprocessor.timeout=600 --to html --execute py_algotrading_combo_ma_crossover_grid_GOOGL.ipynb
@@ -23,8 +25,6 @@
 /opt/conda/bin/jupyter nbconvert --ExecutePreprocessor.timeout=600 --to html --execute py_algotrading_combo_ma_crossover_grid_MRVL.ipynb
 
 /opt/conda/bin/jupyter nbconvert --ExecutePreprocessor.timeout=600 --to html --execute py_algotrading_combo_ma_crossover_grid_NFLX.ipynb
-
-/opt/conda/bin/jupyter nbconvert --ExecutePreprocessor.timeout=600 --to html --execute py_algotrading_combo_ma_crossover_grid_NLOK.ipynb
 
 /opt/conda/bin/jupyter nbconvert --ExecutePreprocessor.timeout=600 --to html --execute py_algotrading_combo_ma_crossover_grid_NVDA.ipynb
 
