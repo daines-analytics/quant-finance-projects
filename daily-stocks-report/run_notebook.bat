@@ -26,6 +26,8 @@ jupyter nbconvert --ExecutePreprocessor.timeout=600 --to html --execute py_algot
 
 jupyter nbconvert --ExecutePreprocessor.timeout=600 --to html --execute py_algotrading_combo_ma_crossover_grid_REGN.ipynb
 
+jupyter nbconvert --ExecutePreprocessor.timeout=600 --to html --execute py_algotrading_combo_ma_crossover_grid_ROKU.ipynb
+
 jupyter nbconvert --ExecutePreprocessor.timeout=600 --to html --execute py_algotrading_combo_ma_crossover_grid_SQ.ipynb
 
 jupyter nbconvert --ExecutePreprocessor.timeout=600 --to html --execute py_algotrading_combo_ma_crossover_grid_SWKS.ipynb
