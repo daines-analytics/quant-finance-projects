@@ -9,10 +9,10 @@
 
 
 <style type="text/css">
-    pre { line-height: 125%; margin: 0; }
-td.linenos pre { color: #000000; background-color: #f0f0f0; padding-left: 5px; padding-right: 5px; }
-span.linenos { color: #000000; background-color: #f0f0f0; padding-left: 5px; padding-right: 5px; }
-td.linenos pre.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+    pre { line-height: 125%; }
+td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+span.linenos { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+td.linenos .special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
 span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
 .highlight .hll { background-color: var(--jp-cell-editor-active-background) }
 .highlight { background: var(--jp-cell-editor-background); color: var(--jp-mirror-editor-variable-color) }
@@ -14263,7 +14263,7 @@ a.anchor-link {
 <p>SUMMARY: This project aims to construct and test an algorithmic trading model and document the end-to-end steps using a template.</p>
 <p>INTRODUCTION: This algorithmic trading model compares a simple mean-reversion strategy with or without using RSI as the exit signal for an individual stock. The model will use a trend window size of ten days for long trades only. When the 14-day RSI value reaches 70, the model will exit the long position.</p>
 <p>ANALYSIS: In this modeling iteration, we analyzed 14 stocks between January 1, 2016, and July 16, 2021. The models' performance appeared at the end of the script.</p>
-<p>CONCLUSION: For all the stocks during the modeling time frame, the long-only trading strategy with either mean-reversion or trend-following approach did not produce a better return than the buy-and-hold approach, except for NFLX. We should consider modeling these stocks further by experimenting with more variations of the strategy.</p>
+<p>CONCLUSION: For all the stocks during the modeling time frame, the long-only trading strategy with or without RSI as the exit signal did not produce a better return than the buy-and-hold approach, except for NFLX. We should consider modeling these stocks further by experimenting with more variations of the strategy.</p>
 <p>Dataset ML Model: Time series analysis with numerical attributes</p>
 <p>Dataset Used: Quandl</p>
 <p>An algorithmic trading modeling project generally can be broken down into about five major tasks:</p>
