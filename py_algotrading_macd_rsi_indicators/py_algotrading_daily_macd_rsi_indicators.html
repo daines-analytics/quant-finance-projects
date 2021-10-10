@@ -3,16 +3,16 @@
 <head><meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>py_algotrading_macd_with_rsi</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>py_algotrading_daily_macd_rsi_indicators</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 
 
 
 
 <style type="text/css">
-    pre { line-height: 125%; margin: 0; }
-td.linenos pre { color: #000000; background-color: #f0f0f0; padding-left: 5px; padding-right: 5px; }
-span.linenos { color: #000000; background-color: #f0f0f0; padding-left: 5px; padding-right: 5px; }
-td.linenos pre.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+    pre { line-height: 125%; }
+td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+span.linenos { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+td.linenos .special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
 span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
 .highlight .hll { background-color: var(--jp-cell-editor-active-background) }
 .highlight { background: var(--jp-cell-editor-background); color: var(--jp-mirror-editor-variable-color) }
@@ -14259,7 +14259,7 @@ a.anchor-link {
 
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="Algorithmic-Trading-Model-using-MACD-with-RSI">Algorithmic Trading Model using MACD with RSI<a class="anchor-link" href="#Algorithmic-Trading-Model-using-MACD-with-RSI">&#182;</a></h1><h3 id="David-Lowe">David Lowe<a class="anchor-link" href="#David-Lowe">&#182;</a></h3><h3 id="October-6,-2021">October 6, 2021<a class="anchor-link" href="#October-6,-2021">&#182;</a></h3><p>NOTE: This script is for learning purposes only and does not constitute a recommendation for buying or selling any stock mentioned in this script.</p>
+<h1 id="Algorithmic-Trading-Model-using-Daily-MACD-and-RSI-Indicators">Algorithmic Trading Model using Daily MACD and RSI Indicators<a class="anchor-link" href="#Algorithmic-Trading-Model-using-Daily-MACD-and-RSI-Indicators">&#182;</a></h1><h3 id="David-Lowe">David Lowe<a class="anchor-link" href="#David-Lowe">&#182;</a></h3><h3 id="October-6,-2021">October 6, 2021<a class="anchor-link" href="#October-6,-2021">&#182;</a></h3><p>NOTE: This script is for learning purposes only and does not constitute a recommendation for buying or selling any stock mentioned in this script.</p>
 <p>SUMMARY: This project aims to construct and test an algorithmic trading model and document the end-to-end steps using a template.</p>
 <p>INTRODUCTION: This algorithmic trading model employs a simple mean-reversion strategy using the Moving Average Convergence/Divergence Oscillator (MACD) and Relative Strength Index (RSI) for the entry and exit signals. For the MACD trend indicators, the model will use 12-day and 26-day periods for the MACD line. For the MACD signal line, we will use a 9-day EMA of the MACD line. The RSI will operate using a 14-day look-back period.</p>
 <p>The model will signal for a long position when the MACD histogram switches from negative to positive, assuming the RSI signal is below the overbought threshold. Conversely, the model will look to initiate a short position when the signals reverse themselves.</p>
